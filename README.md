@@ -1,3 +1,3 @@
 # React Setup
 
-(Heroku deploy link)(https://calculator-react-victor.herokuapp.com)
+[Heroku deploy link](https://calculator-react-victor.herokuapp.com)
