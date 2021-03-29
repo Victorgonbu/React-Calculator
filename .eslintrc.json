@@ -21,6 +21,9 @@
     },
     "ignorePatterns": [
       "dist/",
-      "build/"
+      "build/",
+      "server/",
+      "src/reportWebVitals.js",
+      "node_modules/"
     ]
   }
