@@ -1,16 +1,15 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
-function Display(props) {
-
+function Display() {
+  return null;
 }
 
 Display.propTypes = {
-    result: PropTypes.string.isRequired
-}
+  result: PropTypes.string.isRequired,
+};
 
 Display.defaultProps = {
-    result: 0
-}
+  result: 0,
+};
 
 export default Display;
