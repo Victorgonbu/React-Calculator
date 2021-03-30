@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 
-function App (props) {
-        return (
-            <React.Fragment>
-                <Display />
-                <ButtonPanel />
-            </React.Fragment>
-        );
+function App(props) {
+  return (
+    <>
+      <Display />
+      <ButtonPanel />
+    </>
+  );
 }
 
 export default App;
