@@ -18,6 +18,13 @@ body {
   justify-content: flex-end;
 }
 
+.display {
+  padding: 20% 1em 1em 1em;
+  font-size: 2em;
+  color: white;
+  text-align: right;
+}
+
 .button-panel {
   height: 65%;
 }
