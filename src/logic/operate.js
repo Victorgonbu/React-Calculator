@@ -1,22 +1,26 @@
 import Big from 'big.js';
 
-const Operate = (numberOne, numberTwo, operation) => {
+const operate = (numberOne, numberTwo, operation) => {
     let result;
+    let x = new Big(numberOne);
+    let y = new Big(numberTwo);
+
     switch(operation) {
         case '-':
-        result = numberOne - numberTwo;
+        result = x.minus(y);
         break;
         case '+':
-        result = numberOne + numberTwo;
+        result = x.plus(y);
         break;
         case '*':
-        result = numberOne * numberTwo;
+        result = x.times(y);
         break;
         case '/':
-        result = numberOne / numberTwo
+        result = x.div(y);
+        break;
     }
 
-    return result;
+    return parseInt(result, 10);
 }
 
-export default Operate;
+export default operate;

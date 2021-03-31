@@ -1,7 +1,24 @@
-const Calculate = ((data, buttonName) => {
+import operate from './operate';
+
+const calculate = (data, buttonName) => {
     let {total, next, operation} = data;
-    
+    let result = operate(total, next, operation);
 
-})();
+    switch(buttonName) {
+        case 'AC':
+        result = 0;
+        break;
+        case '+/-':
+        result *= -1;
+        break;
+        case '%':
+        result /= 100;
+        break;
+    }
 
-export default Calculate;
+    return result;
+
+
+};
+
+export default calculate;
