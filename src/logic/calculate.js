@@ -1,4 +1,4 @@
-import operate from './operate';
+import Operate from './Operate';
 
 const Calculate = (data, buttonName) => {
   // we know that the first lap all data values are goin to be null sooo
@@ -12,15 +12,15 @@ const Calculate = (data, buttonName) => {
       operation = null;
       break;
     case '+/-':
-      total = total === null ? total : operate(total, -1, 'X');
-      next = next === null ? next : operate(next, -1, 'X');
+      total = total === null ? total : Operate(total, -1, 'X');
+      next = next === null ? next : Operate(next, -1, 'X');
       break;
     case '%':
-      total = total === null ? total : operate(total, 100, '÷');
+      total = total === null ? total : Operate(total, 100, '÷');
       break;
     case operationRegex.test(buttonName):
       if (operation && next) {
-        total = operate(total, next, operation);
+        total = Operate(total, next, operation);
       } else {
         operation = buttonName;
       }
@@ -31,7 +31,7 @@ const Calculate = (data, buttonName) => {
       break;
     case '=':
       if (operation && next) {
-        total = operate(total, next, operation);
+        total = Operate(total, next, operation);
         next = null;
         operation = null;
       }
