@@ -15,12 +15,12 @@ const operate = (numberOne, numberTwo, operation) => {
         case '*':
         result = x.times(y);
         break;
-        case '/':
+        case '÷':
         result = x.div(y);
         break;
     }
 
-    return parseInt(result, 10);
+    return result;
 }
 
 export default operate;
