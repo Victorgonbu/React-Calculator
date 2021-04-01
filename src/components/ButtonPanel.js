@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
-import PropTypes from 'prop-types'
 
 function ButtonPanel(props) {
   function renderButton(button) {
@@ -44,5 +44,9 @@ function ButtonPanel(props) {
     </div>
   );
 }
+
+ButtonPanel.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
 
 export default ButtonPanel;
