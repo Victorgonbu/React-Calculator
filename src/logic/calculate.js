@@ -1,4 +1,4 @@
-import Operate from './Operate';
+import Operate from './operate';
 
 const Calculate = (data, buttonName) => {
   // we know that the first lap all data values are goin to be null sooo
