@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from './Button';
+import PropTypes from 'prop-types'
 
 function ButtonPanel(props) {
   function renderButton(button) {
-    const handleClick = props;
+    const { handleClick } = props;
     return <Button onClick={handleClick} name={button} />;
   }
 
