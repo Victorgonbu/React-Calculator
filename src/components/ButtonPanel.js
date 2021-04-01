@@ -1,9 +1,10 @@
 import React from 'react';
 import Button from './Button';
 
-function ButtonPanel() {
+function ButtonPanel(props) {
   function renderButton(button) {
-    return <Button name={button} />;
+    const handleClick = props;
+    return <Button onClick={handleClick} name={button} />;
   }
 
   return (
