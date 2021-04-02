@@ -21,11 +21,13 @@ class App extends Component {
 
   render() {
     const { total, next } = this.state;
-
+    // console.log(total);
+    // console.log(next);
+    // console.log(operation);
     return (
       <div className="calculator">
-        <Display result={total || next} />
-        <ButtonPanel onClick={this.handleClick} />
+        <Display result={next || total || '0'} />
+        <ButtonPanel handleClick={this.handleClick} />
       </div>
     );
   }

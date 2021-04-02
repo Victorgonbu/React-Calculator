@@ -4,7 +4,7 @@ const Calculate = (data, buttonName) => {
   // we know that the first lap all data values are goin to be null sooo
   let { total, next, operation } = data;
   const operationRegex = /[X,+,÷,-]/;
-
+  console.log(operationRegex.test(buttonName));
   switch (buttonName) {
     case 'AC':
       total = null;
@@ -18,16 +18,16 @@ const Calculate = (data, buttonName) => {
     case '%':
       total = total === null ? total : Operate(total, 100, '÷');
       break;
-    case operationRegex.test(buttonName):
+    case operationRegex.test(buttonName) && buttonName:
       if (operation && next) {
         total = Operate(total, next, operation);
       } else {
         operation = buttonName;
       }
       break;
-
     case '.':
       next = next ? `${next}.` : '0.';
+      total = total ? `${total}.` : '0.';
       break;
     case '=':
       if (operation && next) {

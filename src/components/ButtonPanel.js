@@ -5,7 +5,7 @@ import Button from './Button';
 function ButtonPanel(props) {
   function renderButton(button) {
     const { handleClick } = props;
-    return <Button onClick={handleClick} name={button} />;
+    return <Button handleClick={handleClick} name={button} />;
   }
 
   return (
@@ -37,7 +37,7 @@ function ButtonPanel(props) {
         { renderButton('+') }
       </div>
       <div className="group group5">
-        { renderButton('O') }
+        { renderButton('0') }
         { renderButton('.') }
         { renderButton('=') }
       </div>
