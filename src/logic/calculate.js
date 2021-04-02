@@ -21,6 +21,7 @@ const Calculate = (data, buttonName) => {
     case operationRegex.test(buttonName) && buttonName:
       if (operation && next) {
         total = Operate(total, next, operation);
+        next = null;
       } else {
         operation = buttonName;
       }
