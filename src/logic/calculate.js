@@ -27,8 +27,13 @@ const Calculate = (data, buttonName) => {
       }
       break;
     case '.':
-      next = next ? `${next}.` : '0.';
-      total = total ? `${total}.` : '0.';
+      if (next) {
+        next = `${next}.`;
+      } else if (total) {
+        total = `${total}.`;
+      } else {
+        total = '0.';
+      }
       break;
     case '=':
       if (operation && next) {
