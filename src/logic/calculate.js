@@ -5,29 +5,41 @@ const Calculate = (data, buttonName) => {
   let { total, next, operation } = data;
   const operationRegex = /[X,+,÷,-]/;
 
+  const allClear = () => {
+    total = null;
+    next = null;
+    operation = null;
+  };
+
   switch (buttonName) {
     case 'AC':
-      total = null;
-      next = null;
-      operation = null;
+      allClear();
       break;
     case '+/-':
-      total = total === null ? total : Operate(total, -1, 'X');
-      next = next === null ? next : Operate(next, -1, 'X');
+      if (next) { next = Operate(next, -1, 'X'); break; }
+      if (total) { total = Operate(total, -1, 'X'); }
       break;
     case '%':
-      total = total === null ? total : Operate(total, 100, '÷');
+      if (next) { next = Operate(next, 100, '÷'); break; }
+      if (total) { total = Operate(total, 100, '÷'); }
       break;
-    case operationRegex.test(buttonName):
+    case operationRegex.test(buttonName) && buttonName:
       if (operation && next) {
         total = Operate(total, next, operation);
+        next = null;
+      } else if (!total && buttonName === '-') {
+        total = buttonName;
+      } else if (operation && total && buttonName === '-') {
+        next = buttonName;
       } else {
         operation = buttonName;
       }
       break;
-
     case '.':
-      next = next ? `${next}.` : '0.';
+      if (next) { next = `${next}.`; break; }
+      if (total) { total = `${total}.`; break; }
+
+      total = '0.';
       break;
     case '=':
       if (operation && next) {
@@ -37,11 +49,9 @@ const Calculate = (data, buttonName) => {
       }
       break;
     default:
-      if (operation && total) {
-        next = next ? next + buttonName : buttonName;
-      } else {
-        total = total ? total + buttonName : buttonName;
-      }
+      if (operation && total) { next = next ? next + buttonName : buttonName; break; }
+      total = total ? total + buttonName : buttonName;
+
       break;
   }
 

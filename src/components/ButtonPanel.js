@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
-function ButtonPanel() {
+function ButtonPanel(props) {
   function renderButton(button) {
-    return <Button name={button} />;
+    const { handleClick } = props;
+    return <Button handleClick={handleClick} name={button} />;
   }
 
   return (
@@ -35,12 +37,16 @@ function ButtonPanel() {
         { renderButton('+') }
       </div>
       <div className="group group5">
-        { renderButton('O') }
+        { renderButton('0') }
         { renderButton('.') }
         { renderButton('=') }
       </div>
     </div>
   );
 }
+
+ButtonPanel.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
 
 export default ButtonPanel;

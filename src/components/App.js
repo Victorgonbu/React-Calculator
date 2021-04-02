@@ -11,19 +11,21 @@ class App extends Component {
       operation: null,
       next: null,
     };
-    this.handleEvent = this.handleEvent.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  handleEvent(buttonName) {
+  handleClick(buttonName) {
     const newState = Calculate(this.state, buttonName);
     this.setState(newState);
   }
 
   render() {
+    const { total, next } = this.state;
+
     return (
       <div className="calculator">
-        <Display />
-        <ButtonPanel />
+        <Display result={next || total || '0'} />
+        <ButtonPanel handleClick={this.handleClick} />
       </div>
     );
   }
