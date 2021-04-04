@@ -4,7 +4,7 @@ const Calculate = (data, buttonName) => {
   // we know that the first lap all data values are goin to be null sooo
   let { total, next, operation } = data;
   const operationRegex = /[X,+,÷,-]/;
-  
+
   const allClear = () => {
     total = null;
     next = null;
