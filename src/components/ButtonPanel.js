@@ -10,22 +10,24 @@ function ButtonPanel(props) {
 
   const buttonGroups = [['AC', '+/-', '%', '÷'], ['7', '8', '9', 'X'], ['4', '5', '6', '-'], ['1', '2', '3', '+'], ['0', '.', '=']];
 
-  function renderGroup(groupIndex) {
+  function renderGroup(group) {
     return (
       <div className="group">
-        { buttonGroups[groupIndex].map(button => renderButton(button)) }
+        { group.map(button => renderButton(button)) }
+      </div>
+    );
+  }
+
+  function renderPanel() {
+    return (
+      <div className="button-panel">
+        { buttonGroups.map(buttonGroup => renderGroup(buttonGroup)) }
       </div>
     );
   }
 
   return (
-    <div className="button-panel">
-      {renderGroup(0)}
-      {renderGroup(1)}
-      {renderGroup(2)}
-      {renderGroup(3)}
-      {renderGroup(4)}
-    </div>
+    renderPanel()
   );
 }
 
