@@ -24,14 +24,14 @@ const Calculate = (data, buttonName) => {
       if (total) { total = Operate(total, 100, '÷'); }
       break;
     case operationRegex.test(buttonName) && buttonName:
-      if (operation && next) {
+      if (operation && next && next !== '-') {
         total = Operate(total, next, operation);
         next = null;
-      } else if (!total && buttonName === '-') {
+      } else if (!total && buttonName === '-' && total !== '-') {
         total = buttonName;
-      } else if (operation && total && buttonName === '-') {
+      } else if (operation && total && buttonName === '-' && next !== '-' && total !== '-') {
         next = buttonName;
-      } else {
+      } else if (total !== '-' && next !== '-') {
         operation = buttonName;
       }
       break;
