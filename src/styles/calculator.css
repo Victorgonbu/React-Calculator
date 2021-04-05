@@ -6,7 +6,7 @@ body {
 }
 
 .calculator {
-  background-color: #141414;
+  background-color: #858693;
   width: 25%;
   height: 50%;
   position: absolute;
@@ -33,9 +33,4 @@ body {
   width: 100%;
   height: calc(100% / 5);
   display: flex;
-}
-
-.button {
-  flex: 1;
-  border: 1px solid gray;
 }

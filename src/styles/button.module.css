@@ -1,0 +1,12 @@
+.numbers {
+  background-color: #e0e0e0;
+}
+
+.operators {
+  background-color: #f5913e;
+}
+
+.button {
+  flex: 1;
+  border: 1px solid gray;
+}
