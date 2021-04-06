@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
+import * as styles from '../styles/components.module.css';
 
 function ButtonPanel(props) {
   function renderButton(button) {
@@ -12,7 +13,7 @@ function ButtonPanel(props) {
 
   function renderGroup(group) {
     return (
-      <div className="group">
+      <div className={styles.group}>
         { group.map(button => renderButton(button)) }
       </div>
     );
@@ -20,7 +21,7 @@ function ButtonPanel(props) {
 
   function renderPanel() {
     return (
-      <div className="button-panel">
+      <div className={styles.buttonPanel}>
         { buttonGroups.map(buttonGroup => renderGroup(buttonGroup)) }
       </div>
     );

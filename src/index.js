@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/reset.css';
-import './styles/calculator.css';
+import './styles/app.css';
 import App from './components/App';
 
 ReactDOM.render(
