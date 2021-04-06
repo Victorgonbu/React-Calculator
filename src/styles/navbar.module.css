@@ -1,8 +1,12 @@
 .navbar {
-  background-color: red;
+  background-color: #ffa500;
   display: flex;
   justify-content: space-between;
   padding: 1.5em;
+}
+
+.brand {
+  font-size: 3em;
 }
 
 .navLinks {
@@ -11,6 +15,7 @@
   padding: 0 1em;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 20%;
 }
 
@@ -20,5 +25,5 @@
 }
 
 .active {
-  background-color: blue;
+  border-bottom: 1px solid black;
 }

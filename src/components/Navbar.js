@@ -7,7 +7,7 @@ const Navbar = props => {
   const { val } = props;
   return (
     <nav className={styles.navbar}>
-      <div className="brand">Math Magicians</div>
+      <div className={styles.brand}>Math Magicians</div>
       <div className={styles.navLinks}>
         <Link to="/" className={`${styles.link} ${val === 'Home' ? styles.active : null}`}>Home</Link>
         <Link to="/calculator" className={`${styles.link} ${val === 'Calculator' ? styles.active : null}`}>Calculator</Link>

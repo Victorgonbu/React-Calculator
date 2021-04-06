@@ -33,3 +33,13 @@
   flex: 2.1;
   background-color: #e0e0e0;
 }
+
+.header {
+  font-size: 2em;
+  padding: 2rem;
+}
+
+.heroText {
+  padding: 2rem;
+  font-size: 1.2em;
+}
