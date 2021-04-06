@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import Display from './Display';
-import ButtonPanel from './ButtonPanel';
 import Navbar from './Navbar';
+import CalculatorContainer from './CalculatorContainer';
 import Calculate from '../logic/calculate';
-import * as styles from '../styles/calculator.module.css';
 
 const App = () => {
   const [total, setTotal] = useState(null);
@@ -20,10 +18,7 @@ const App = () => {
   return (
     <>
       <Navbar val="Calculator" />
-      <div className={styles.calculator}>
-        <Display result={next || total || '0'} />
-        <ButtonPanel handleClick={handleClick} />
-      </div>
+      <CalculatorContainer handleClick={handleClick} total={total} next={next} />
     </>
 
   );

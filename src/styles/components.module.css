@@ -43,3 +43,12 @@
   padding: 2rem;
   font-size: 1.2em;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexRow {
+  flex-direction: row;
+}
