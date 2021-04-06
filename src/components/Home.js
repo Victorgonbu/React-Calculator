@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 
 const Home = () => (
   <div className="home">
-    <Navbar />
+    <Navbar val="Home" />
   </div>
 );
 
