@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from './Button';
-import * as styles from '../styles/components.module.css';
+import * as styles from '../../styles/components.module.css';
 
 function ButtonPanel(props) {
   function getButtonProps(button) {
