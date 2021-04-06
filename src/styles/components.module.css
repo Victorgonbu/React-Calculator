@@ -1,0 +1,63 @@
+.display {
+  font-size: 2em;
+  padding: 0.7em;
+  color: white;
+  text-align: right;
+  font-weight: bold;
+}
+
+.buttonPanel {
+  height: calc(100% - 100px);
+}
+
+.group {
+  width: 100%;
+  height: calc(100% / 5);
+  display: flex;
+}
+
+.numbers {
+  background-color: #e0e0e0;
+}
+
+.operators {
+  background-color: #f5913e;
+}
+
+.button {
+  flex: 1;
+  border: 1px solid #d3d3d3;
+}
+
+.bigButton {
+  flex: 2.1;
+  background-color: #e0e0e0;
+}
+
+.header {
+  font-size: 2em;
+  padding: 2rem;
+}
+
+.heroText {
+  padding: 2rem;
+  font-size: 1.2em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote {
+  height: calc(100vh - 96px);
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  padding: 0 3em;
+}
+
+.flexRow {
+  flex-direction: row;
+  justify-content: space-around;
+}

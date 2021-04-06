@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Display from './Display';
-import ButtonPanel from './ButtonPanel';
+import Navbar from './Navbar';
+import CalculatorContainer from './CalculatorContainer';
 import Calculate from '../logic/calculate';
 
 const App = () => {
@@ -16,10 +16,11 @@ const App = () => {
   };
 
   return (
-    <div className="calculator">
-      <Display result={next || total || '0'} />
-      <ButtonPanel handleClick={handleClick} />
-    </div>
+    <>
+      <Navbar val="Calculator" />
+      <CalculatorContainer handleClick={handleClick} total={total} next={next} />
+    </>
+
   );
 };
 

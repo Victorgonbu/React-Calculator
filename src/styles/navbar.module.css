@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #ffa500;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em;
+}
+
+.brand {
+  font-size: 3em;
+}
+
+.navLinks {
+  margin: 0;
+  padding: 0 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.active {
+  border-bottom: 1px solid black;
+}
