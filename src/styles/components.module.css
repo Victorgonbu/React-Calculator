@@ -49,6 +49,14 @@
   flex-direction: column;
 }
 
+.quote {
+  height: calc(100vh - 96px);
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  padding: 0 3em;
+}
+
 .flexRow {
   flex-direction: row;
   justify-content: space-around;
