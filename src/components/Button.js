@@ -4,13 +4,11 @@ import * as styles from '../styles/components.module.css';
 
 function Button(props) {
   const { name, handleClick } = props;
-  const getButtonClass = string => {
-    const operationRegex = /[X,+,÷,=,-]/;
-    if (string === '+/-') return styles.number;
-    if (operationRegex.test(string)) return styles.operators;
-    return styles.number;
-  };
-
+  function getButtonClass() {
+    if (props.width === 2) return styles.bigButton;
+    if (props.color === 'orange') return styles.operators;
+    return styles.numbers;
+  }
   return (
     <button onClick={() => { handleClick(name); }} type="button" className={`${getButtonClass(name)} ${styles.button}`}>{name}</button>
   );
@@ -19,6 +17,8 @@ function Button(props) {
 Button.propTypes = {
   name: PropTypes.string.isRequired,
   handleClick: PropTypes.func.isRequired,
+  width: PropTypes.number.isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export default Button;

@@ -29,7 +29,7 @@
   border: 1px solid #d3d3d3;
 }
 
-.smallButton {
-  flex: 0.5;
-  border: 1px solid #d3d3d3;
+.bigButton {
+  flex: 2.1;
+  background-color: #e0e0e0;
 }
