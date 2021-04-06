@@ -1,15 +1,12 @@
 import React from 'react';
-//import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Navbar from './Navbar';
-import HeroText from './HeroText';
+// import HeroText from './HeroText';
 
-const Home = () => {
-    return(
-        <div className='home'>
-            <Navbar />
-            <HeroText />
-        </div>
-    );
-}
+const Home = () => (
+  <div className="home">
+    <Navbar />
+  </div>
+);
 
 export default Home;

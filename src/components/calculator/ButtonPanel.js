@@ -9,22 +9,22 @@ function ButtonPanel(props) {
     const buttonProps = { color: 'gray', width: 1 };
 
     if (button === '+/-') return buttonProps;
-    if (operationRegex.test(button)) return { buttonProps, color: 'orange' };
-    if (button === '0') return { buttonProps, width: 2 };
+    if (operationRegex.test(button)) return { ...buttonProps, color: 'orange' };
+    if (button === '0') return { ...buttonProps, width: 2 };
     return buttonProps;
   }
 
-  function renderButton(button) {
+  function renderButton(btn) {
     const { handleClick } = props;
-    const { color, width } = getButtonProps(button);
-    return <Button name={button} handleClick={handleClick} color={color} width={width} />;
+    const { color, width } = getButtonProps(btn);
+    return <Button key={btn} name={btn} handleClick={handleClick} color={color} width={width} />;
   }
 
   const buttonGroups = [['AC', '+/-', '%', '÷'], ['7', '8', '9', 'X'], ['4', '5', '6', '-'], ['1', '2', '3', '+'], ['0', '.', '=']];
 
   function renderGroup(group) {
     return (
-      <div className={styles.group}>
+      <div key={group} className={styles.group}>
         { group.map(button => renderButton(button)) }
       </div>
     );
