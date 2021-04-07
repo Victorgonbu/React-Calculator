@@ -17,7 +17,7 @@ const App = () => {
 
   return (
     <>
-      <Navbar val="Calculator" />
+      <Navbar />
       <CalculatorContainer handleClick={handleClick} total={total} next={next} />
     </>
 

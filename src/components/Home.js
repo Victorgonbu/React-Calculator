@@ -4,7 +4,7 @@ import HomeContainer from './HomeContainer';
 
 const Home = () => (
   <div className="home">
-    <Navbar val="Home" />
+    <Navbar />
     <HomeContainer />
   </div>
 );
