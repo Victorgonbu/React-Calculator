@@ -3,10 +3,19 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 import Home from '../components/Home';
 
+
+jest.mock('../components/Navbar', () => () => <nav data-testid='navbar' />) ;
+
 describe('Home', () => {
-  it('Renders Nabvar, a header and 2 paragraphs', async () => {
+
+  it('should render navbar component', async () => {
+    render(<Home />);
+    expect(await screen.getByTestId(/navbar/)).toBeInTheDocument();
+  });
+  
+  it('should render a welcome message in home header', async () => {
     render(<Home />);
 
-    expect (await screen.findByText('Welcome to our page')).toEqual(<h1>Welcome to our page</h1>);
+    expect( await screen.findByText('Welcome to our page')).toMatchSnapshot();
   });
 });
