@@ -10,18 +10,41 @@ describe('Calcualate', () => {
         let buttonName = null;
 
         describe('if data properties have null value and buttonName is given', () => {
-            
-            it('return total property with buttonName as value within object returned if buttonName is a number', () => {
-                buttonName = '5'
-                const result = Calculate(data, buttonName);
+
+            describe('return a property with buttonName as value within object returned', () => {
+                it('return total property if buttonName is a number', () => {
+                    buttonName = '5'
+                    const result = Calculate(data, buttonName);
+        
+                    expect(result).toHaveProperty('total', buttonName);
+                    expect(result).toHaveProperty('next', null);
+                    expect(result).toHaveProperty('operation', null);
+        
+                });
     
-                expect(result).toHaveProperty('total', buttonName);
-                expect(result).toHaveProperty('next', null);
-                expect(result).toHaveProperty('operation', null);
-    
+                it('return operator property if buttonName is an operator', () => {
+                    buttonName = '+';
+
+                    const result = Calculate(data, buttonName);
+
+                    expect(result).toHaveProperty('total', null);
+                    expect(result).toHaveProperty('next', null);
+                    expect(result).toHaveProperty('operation', buttonName);
+                
+                });
             });
+            
+           
         });
 
+        describe('if one data property is not null and buttonName is given', () => {
+           it('return buttonName concatenated with property if buttonName is a number ', ()=> {
+                buttonName = '5';
+                const dataWitTotal = {...data, total: '5'};
+                const result = Calculate(dataWitTotal, buttonName);
+                expect(result.total).toEqual('55');
+           }); 
+        });
        
     });
 });
