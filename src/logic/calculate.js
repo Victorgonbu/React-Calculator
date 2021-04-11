@@ -24,7 +24,7 @@ const Calculate = (data, buttonName) => {
       if (total) { total = Operate(total, 100, '÷'); }
       break;
     case operationRegex.test(buttonName) && buttonName:
-      if (operation && next && next !== '-') {
+      if (total && operation && next && next !== '-') {
         total = Operate(total, next, operation);
         next = null;
       } else if (!total && buttonName === '-' && total !== '-') {

@@ -114,8 +114,9 @@ describe('Calcualate', () => {
         });
 
         describe('if two data properties are not null and buttonName is given', () => {
-            const dataWithTwoProperties = {...data, total: '5', operation: '-'}
+            
             describe('when total and operation are not null', () => {
+                const dataWithTwoProperties = {...data, total: '5', operation: '-'}
                 it('return buttonName as next property if buttonName is a number', () => {
                     buttonName = '6';
                     const result = Calculate(dataWithTwoProperties, buttonName);
@@ -130,6 +131,34 @@ describe('Calcualate', () => {
                     expect(result).toHaveProperty('operation', 'X');
                     expect(result).toHaveProperty('total', dataWithTwoProperties.total);
                     expect(result).toHaveProperty('next', null)
+                });
+            });
+
+            describe('when operation and next are given', () => {
+                const dataWithTwoProperties = {...data, next: '6', operation: '+'};
+                it('return buttonName as total property if buttonName is a number', () => {
+                    buttonName = '7';
+                    const result = Calculate(dataWithTwoProperties, buttonName);
+                    expect(result).toHaveProperty('total', '7');
+                    expect(result).toHaveProperty('next', dataWithTwoProperties.next);
+                    expect(result).toHaveProperty('operation', dataWithTwoProperties.operation);
+                });
+
+                it('return buttonName as new operation property if buttonName is an operator', () => {
+                    buttonName = '-';
+                    const result = Calculate(dataWithTwoProperties, 'X');
+                    expect(result).toHaveProperty('total', null);
+                    expect(result).toHaveProperty('next', dataWithTwoProperties.next);
+                    expect(result).toHaveProperty('operation', 'X');
+                   
+                });
+
+                it("return buttonName as total property if buttonName is '-'", () => {
+                    buttonName = '-';
+                    const result = Calculate(dataWithTwoProperties, buttonName);
+                    expect(result).toHaveProperty('total', '-');
+                    expect(result).toHaveProperty('operation', dataWithTwoProperties.operation);
+                    expect(result).toHaveProperty('next', dataWithTwoProperties.next);
                 });
             });
         });
