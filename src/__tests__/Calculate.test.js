@@ -112,6 +112,27 @@ describe('Calcualate', () => {
                 });
             });
         });
+
+        describe('if two data properties are not null and buttonName is given', () => {
+            const dataWithTwoProperties = {...data, total: '5', operation: '-'}
+            describe('when total and operation are not null', () => {
+                it('return buttonName as next property if buttonName is a number', () => {
+                    buttonName = '6';
+                    const result = Calculate(dataWithTwoProperties, buttonName);
+                    expect(result).toHaveProperty('total',  dataWithTwoProperties.total);
+                    expect(result).toHaveProperty('next', '6');
+                    expect(result).toHaveProperty('operation', dataWithTwoProperties.operation);
+                });
+
+                it('return buttonName as the new operation property if buttonName is an operator', () => {
+                    buttonName = 'X';
+                    const result = Calculate(dataWithTwoProperties, buttonName);
+                    expect(result).toHaveProperty('operation', 'X');
+                    expect(result).toHaveProperty('total', dataWithTwoProperties.total);
+                    expect(result).toHaveProperty('next', null)
+                });
+            });
+        });
        
     });
 });
