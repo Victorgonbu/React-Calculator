@@ -62,6 +62,32 @@ describe('Calcualate', () => {
                     expect(result).toHaveProperty('total', '-5');
                 });
            });
+
+           describe('when operation is not null', () => {
+            const dataWithOperator = {...data, operation: '+'}
+                it('return buttonName as total property if button name is a number', () => {
+                    buttonName = '5';
+
+                    const result = Calculate(dataWithOperator, buttonName);
+                    expect(result).toHaveProperty('total', '5');
+                    expect(result).toHaveProperty('operation', '+');
+    
+                });
+
+                it('return an object with buttonName as new operation property if buttonName is an operator', () => {
+                    buttonName = 'X';
+
+                    const result = Calculate(dataWithOperator, buttonName);
+                    expect(result).toHaveProperty('operation', 'X');
+                });
+
+                it("return buttonName as total property if buttonName is '-'", () => {
+                    buttonName = '-';
+                    const result = Calculate(dataWithOperator, buttonName);
+                    expect(result).toHaveProperty('total', '-');
+                    expect(result).toHaveProperty('operation', dataWithOperator.operation)
+                });
+           });
         
         });
        
