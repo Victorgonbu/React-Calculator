@@ -1,7 +1,6 @@
 import Operate from './operate';
 
 const Calculate = (data, buttonName) => {
-  
   let { total, next, operation } = data;
   const operationRegex = /[X,+,÷,-]/;
 
@@ -27,6 +26,7 @@ const Calculate = (data, buttonName) => {
       if (total && operation && next && next !== '-') {
         total = Operate(total, next, operation);
         next = null;
+        operation = buttonName;
       } else if (!total && buttonName === '-' && total !== '-') {
         total = buttonName;
       } else if (operation && total && buttonName === '-' && next !== '-' && total !== '-') {
