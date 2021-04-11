@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote renders Navbar component 1`] = `
+<nav
+  data-testid="navbar"
+/>
+`;
+
+exports[`Quote renders Text component with a quote 1`] = `
+<p>
+  Mathematics is not about numbers, equations, computations, or algorithms: it is about understanding. –William Paul
+</p>
+`;
