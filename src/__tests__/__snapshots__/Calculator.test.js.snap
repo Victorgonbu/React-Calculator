@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Calculator renders ButtonPanel component within calculator container 1`] = `
+<nav
+  data-testid="buttonPanel"
+/>
+`;
+
+exports[`Calculator renders Display component within calculator container 1`] = `
+<nav
+  data-testid="display"
+/>
+`;
+
+exports[`Calculator renders Header component within calculator container 1`] = `
+<nav
+  data-testid="header"
+/>
+`;
+
+exports[`Calculator renders calculator container 1`] = `
+<div
+  class="undefined undefined"
+  data-testid="calculator-container"
+>
+  <nav
+    data-testid="header"
+  />
+  <div>
+    <nav
+      data-testid="display"
+    />
+    <nav
+      data-testid="buttonPanel"
+    />
+  </div>
+</div>
+`;
+
+exports[`Calculator renders navbar component 1`] = `
+<nav
+  data-testid="navbar"
+/>
+`;
