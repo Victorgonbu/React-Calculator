@@ -38,12 +38,31 @@ describe('Calcualate', () => {
         });
 
         describe('if one data property is not null and buttonName is given', () => {
-           it('return buttonName concatenated with property if buttonName is a number ', ()=> {
-                buttonName = '5';
+           
+           describe('when total is not null', () => {
                 const dataWitTotal = {...data, total: '5'};
-                const result = Calculate(dataWitTotal, buttonName);
-                expect(result.total).toEqual('55');
-           }); 
+                it('return buttonName concatenated if buttonName is a number ', ()=> {
+                    buttonName = '5';
+                    const result = Calculate(dataWitTotal, buttonName);
+                    expect(result.total).toEqual('55');
+                }); 
+                it('return buttonName as operator property within object returned if buttonName is an operator', () => {
+                    buttonName = '-';
+                    const result = Calculate(dataWitTotal, buttonName);
+                    expect(result).toHaveProperty('total', dataWitTotal.total);
+                    expect(result).toHaveProperty('operation', '-');
+
+                    
+                })
+
+                it("return total multiplied by -1 if buttonName is '+/-'", () => {
+                    buttonName = '+/-';
+
+                    const result = Calculate(dataWitTotal, buttonName);
+                    expect(result).toHaveProperty('total', '-5');
+                });
+           });
+        
         });
        
     });
