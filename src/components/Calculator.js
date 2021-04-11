@@ -22,7 +22,7 @@ const Calculator = () => {
   return (
     <>
       <Navbar />
-      <div className={`${styles.container} ${styles.flexRow}`} data-testid='calculator-container'>
+      <div className={`${styles.container} ${styles.flexRow}`} data-testid="calculator-container">
         <Header text="Let's do some math!" />
         <div className={calcStyles.calculator}>
           <Display result={next || total || '0'} />

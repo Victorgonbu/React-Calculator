@@ -161,18 +161,18 @@ describe('Calculate', () => {
         expect(result).toHaveProperty('next', null);
         expect(result).toHaveProperty('operation', '+');
 
-        buttonName = '='
+        buttonName = '=';
         result = Calculate(allProperties, buttonName);
         expect(result).toHaveProperty('total', '25');
         expect(result).toHaveProperty('next', null);
         expect(result).toHaveProperty('operation', null);
       });
-      
+
       it('return buttonName concatenated with next property if buttonName is a number', () => {
         buttonName = '6';
         const result = Calculate(allProperties, buttonName);
         expect(result).toHaveProperty('total', allProperties.total);
-        expect(result).toHaveProperty('next', allProperties.next + '6');
+        expect(result).toHaveProperty('next', `${allProperties.next}6`);
         expect(result).toHaveProperty('operation', allProperties.operation);
       });
     });

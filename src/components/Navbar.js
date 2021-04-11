@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import * as styles from '../styles/navbar.module.css';
 
 const Navbar = () => (
-  <nav className={styles.navbar}>
+  <nav className={styles.navbar} data-testid="navbar">
     <div className={styles.brand}>Math Magicians</div>
     <div className={styles.navLinks}>
 
@@ -13,6 +13,7 @@ const Navbar = () => (
 
     </div>
   </nav>
+
 );
 
 export default Navbar;
