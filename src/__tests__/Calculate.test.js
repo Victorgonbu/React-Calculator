@@ -87,8 +87,30 @@ describe('Calcualate', () => {
                     expect(result).toHaveProperty('total', '-');
                     expect(result).toHaveProperty('operation', dataWithOperator.operation)
                 });
-           });
-        
+            });
+            
+            describe('when next is not null', () => {
+                const dataWithNext = {...data, next: '4'};
+                it('return buttonName as total property if buttonName is a number', () => {
+                    buttonName = '6';
+                    const result = Calculate(dataWithNext, buttonName);
+                    expect(result).toHaveProperty('next', '4');
+                    expect(result).toHaveProperty('total', '6')
+                });
+
+                it('return buttonName as operation if buttonName is an operator', ()=> {
+                    buttonName = '+';
+                    const result = Calculate(dataWithNext, buttonName);
+                    expect(result).toHaveProperty('next', dataWithNext.next);
+                    expect(result).toHaveProperty('operation', '+');
+                });
+
+                it("return next multiplied by -1 if buttonName is '+/-'", () => {
+                    buttonName = '+/-';
+                    const result = Calculate(dataWithNext, buttonName);
+                    expect(result).toHaveProperty('next', '-4');
+                });
+            });
         });
        
     });
