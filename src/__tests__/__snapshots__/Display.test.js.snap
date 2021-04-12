@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display render result passed in props 1`] = `
+<div>
+  15
+</div>
+`;
